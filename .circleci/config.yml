@@ -5,12 +5,12 @@ jobs:
       xcode: "12.5.1"
     steps:
       - checkout
-      - run:
-          name: Install dependencies
-          command: |
-            gem install bundler
-            bundle install
-            bundle exec pod install
+      # - run:
+      #     name: Install dependencies
+      #     command: |
+      #       gem install bundler
+      #       bundle install
+      #       bundle exec pod install
       - run:
           name: Build project
           command: |
