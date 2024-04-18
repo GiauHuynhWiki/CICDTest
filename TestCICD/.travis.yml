@@ -1,0 +1,8 @@
+language: objective-c
+osx_image: xcode13.2
+xcode_workspace: TestCICD.xcodeproj
+xcode_scheme: TestCICD
+xcode_destination: platform=iOS Simulator,OS=15.2,name=iPhone X
+before_install:
+  - bundle install
+  - bundle exec pod install --repo-update
