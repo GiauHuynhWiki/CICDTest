@@ -1,0 +1,21 @@
+version: 2.1
+jobs:
+  build:
+    macos:
+      xcode: "12.5.1"
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: |
+            gem install bundler
+            bundle install
+            bundle exec pod install
+      - run:
+          name: Build project
+          command: |
+            xcodebuild clean build -project TestCICD.xcodeproj -scheme TestCICD -destination "platform=iOS Simulator,name=iPhone 12"
+      - store_artifacts:
+          path: build/reports
+      - store_artifacts:
+          path: build/coverage
