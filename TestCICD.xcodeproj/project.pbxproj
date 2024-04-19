@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC23CF092BD0DFCC00B4CE20 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC23CF082BD0DFCC00B4CE20 /* GoogleService-Info.plist */; };
+		AC23CF0B2BD1F14E00B4CE20 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC23CF0A2BD1F14E00B4CE20 /* GoogleService-Info.plist */; };
 		AC9657462BD0CCA6004093B5 /* TestCICDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9657452BD0CCA6004093B5 /* TestCICDApp.swift */; };
 		AC96574A2BD0CCAA004093B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC9657492BD0CCAA004093B5 /* Assets.xcassets */; };
 		AC96574D2BD0CCAA004093B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC96574C2BD0CCAA004093B5 /* Preview Assets.xcassets */; };
@@ -68,7 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AC23CF082BD0DFCC00B4CE20 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AC23CF0A2BD1F14E00B4CE20 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AC9657422BD0CCA6004093B5 /* TestCICD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestCICD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9657452BD0CCA6004093B5 /* TestCICDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCICDApp.swift; sourceTree = "<group>"; };
 		AC9657492BD0CCAA004093B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 				AC9657B42BD0D5A6004093B5 /* Repositories */,
 				AC9657B22BD0D5A6004093B5 /* Extensions */,
 				AC9657492BD0CCAA004093B5 /* Assets.xcassets */,
-				AC23CF082BD0DFCC00B4CE20 /* GoogleService-Info.plist */,
+				AC23CF0A2BD1F14E00B4CE20 /* GoogleService-Info.plist */,
 				AC96574B2BD0CCAA004093B5 /* Preview Content */,
 			);
 			path = TestCICD;
@@ -396,7 +396,7 @@
 			files = (
 				AC96574D2BD0CCAA004093B5 /* Preview Assets.xcassets in Resources */,
 				AC96574A2BD0CCAA004093B5 /* Assets.xcassets in Resources */,
-				AC23CF092BD0DFCC00B4CE20 /* GoogleService-Info.plist in Resources */,
+				AC23CF0B2BD1F14E00B4CE20 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
