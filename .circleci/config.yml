@@ -6,20 +6,21 @@ jobs:
     steps:
       - checkout
 
-      # # Khóa cache cho SPM
-      # - restore_cache:
-      #     keys:
-      #       - spm-cache-{{ .Branch }}-{{ checksum "Package.resolved" }}
+      # Khóa cache cho dependencies của dự án SPM
+      - restore_cache:
+          keys:
+            - project-dependencies-{{ checksum "Package.resolved" }}
 
-      # - run:
-      #     name: Install SPM dependencies
-      #     command: swift package resolve
+      # Tải các dependencies nếu chưa có cache
+      - run:
+          name: Install SPM dependencies
+          command: swift package resolve
 
-      # # Lưu cache cho SPM
-      # - save_cache:
-      #     key: spm-cache-{{ .Branch }}-{{ checksum "Package.resolved" }}
-      #     paths:
-      #       - ~/.build
+      # Lưu cache cho dependencies của dự án SPM
+      - save_cache:
+          key: project-dependencies-{{ checksum "Package.resolved" }}
+          paths:
+            - ~/.build
 
       - run:
           name: Build project
