@@ -1,3 +1,23 @@
+# version: 2.1
+# jobs:
+#   build:
+#     macos:
+#       xcode: "14.0.1"
+#     steps:
+#       - checkout
+
+#       - run:
+#           name: Build project
+#           command: |
+#             xcodebuild clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -project TestCICD.xcodeproj -scheme TestCICD -destination "platform=iOS Simulator,OS=15.5,name=iPhone 13"
+#       - store_artifacts:
+#           path: build/reports
+#       - store_artifacts:
+#           path: build/coverage
+
+
+
+
 version: 2.1
 jobs:
   build:
@@ -6,26 +26,25 @@ jobs:
     steps:
       - checkout
 
-      # Khóa cache cho dependencies của dự án SPM
       - restore_cache:
           keys:
-            - project-dependencies-{{ checksum "Package.resolved" }}
+            - spm-cache-v1-{{ checksum "Package.resolved" }}
+            - spm-cache-v1-
 
-      # Tải các dependencies nếu chưa có cache
       - run:
-          name: Install SPM dependencies
+          name: Resolve Packages
           command: swift package resolve
-
-      # Lưu cache cho dependencies của dự án SPM
-      - save_cache:
-          key: project-dependencies-{{ checksum "Package.resolved" }}
-          paths:
-            - ~/.build
 
       - run:
           name: Build project
           command: |
             xcodebuild clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -project TestCICD.xcodeproj -scheme TestCICD -destination "platform=iOS Simulator,OS=15.5,name=iPhone 13"
+
+      - save_cache:
+          key: spm-cache-v1-{{ checksum "Package.resolved" }}
+          paths:
+            - .build
+
       - store_artifacts:
           path: build/reports
       - store_artifacts:
