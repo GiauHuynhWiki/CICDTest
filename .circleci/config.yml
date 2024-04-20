@@ -11,6 +11,23 @@ jobs:
       #       gem install bundler
       #       bundle install
       #       bundle exec pod install
+
+
+      # Khóa cache cho SPM
+      - restore_cache:
+          keys:
+            - spm-cache-{{ .Branch }}-{{ checksum "Package.resolved" }}
+
+      - run:
+          name: Install SPM dependencies
+          command: swift package resolve
+
+      # Lưu cache cho SPM
+      - save_cache:
+          key: spm-cache-{{ .Branch }}-{{ checksum "Package.resolved" }}
+          paths:
+            - ~/.build
+
       - run:
           name: Build project
           command: |
